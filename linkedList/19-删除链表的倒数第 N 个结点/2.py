@@ -31,6 +31,7 @@ def print_linked_list(list_node):
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
 
+        
         dummyNode  = ListNode(0,head)
         
         cur = dummyNode 
@@ -43,14 +44,11 @@ class Solution:
 
         index = k - n + 1
 
-        cur = dummyNode    
-        while ( index > 1):
+        cur = dummyNode 
+        for i in range(1,index):
             cur = cur.next
-            index = index - 1
+        
         cur.next = cur.next.next
-
-
-        # index = k - n 
 
  
 
@@ -67,5 +65,3 @@ s1 = Solution()
 
 res=print_linked_list(s1.removeNthFromEnd(link,n))
 # res = print(s1.removeNthFromEnd(link,n))
-
-# print_linked_list(link)
