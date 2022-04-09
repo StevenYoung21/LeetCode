@@ -23,7 +23,7 @@ class Solution:
                         break
                 cur.append(s[right]) 
 
-        return cur
+        return maxLen
 
 
 """

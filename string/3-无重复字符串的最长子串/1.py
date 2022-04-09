@@ -21,7 +21,7 @@ class Solution:
                     cur.pop(0)
                 cur.append(s[i])
 
-        return cur
+        return maxLen
 
 
 s = "tmmzuxt"
