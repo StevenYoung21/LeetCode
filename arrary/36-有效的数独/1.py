@@ -1,14 +1,30 @@
+from ctypes import sizeof
+
+
 class Solution:
     def isValidSudoku(self, board) -> bool:
 
-        dic = []
+        temp = []
 
-        for i in range(len(board)):
-            for j in range(len(board[i]))
-                for k in range[j,]
+        arr1 = [ []  for _ in range(9) ]
+
+        arr2 = [ []  for _ in range(9)]
+
+        arr3 = [ [] for _ in range(3) for _ in range(3) ]
+
+        for i in range(9):
+            for j in range(9):
+                ch = board[i][j]
+                if ch == "." : continue
+                if ch in arr1[i] or ch in arr2[j] or ch in arr3[i//3*3+j//3]:
+                    return False
+                arr1[i].append(ch)
+                arr2[j].append(ch)
+                arr3[i//3*3+j//3].append(ch)
 
 
-        return board[0]
+
+        return True
 
 board = [
  ["5","3",".",".","7",".",".",".","."]
