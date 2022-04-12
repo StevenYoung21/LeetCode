@@ -30,15 +30,38 @@ def print_linked_list(list_node):
         cur = cur.next
     print('null')
 
+class MyLinkedList:
+
+    def __init__(self):
+        self.head = None
+        self.size = 0
+
+    def addAtHead(self, val: int) -> None:
+        curNode = ListNode(val)  ## 定义当前插入节点
+        if self.size == 0:
+            self.head = curNode
+            self.size += 1
+            return
+        else:
+            curNode.next = self.head
+            self.head = curNode
+            self.size += 1
+            return
+
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
 
         if head == [] : return []
 
         cur = head 
-        cur2 = head    
 
-        return cur
+        s1 = MyLinkedList()
+
+        while cur:    
+            s1.addAtHead(cur.val)
+            cur = cur.next
+
+        return s1.head
 
 head = [1,2,3,4,5]
 
