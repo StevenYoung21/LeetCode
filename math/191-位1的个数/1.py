@@ -14,7 +14,7 @@ class Solution:
 
 
 
-n = 0B1
+n = 0B00000000000000000000000000001011
 
 s1 = Solution()
 
