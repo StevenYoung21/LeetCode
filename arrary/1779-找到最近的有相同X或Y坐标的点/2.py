@@ -5,9 +5,7 @@ class Solution:
 
 
         def dis(arr,x,y):
-
             dis = abs(arr[0]-x) + abs(arr[1]-y)
-
             return dis
 
 
@@ -16,19 +14,26 @@ class Solution:
                 disI = dis(points[i],x,y)
                 res[i] = disI
 
-        mixV = float('inf')
-        for value in res.values():
-            mixV = min(mixV,value)
+        if res == {}: return -1
 
-        
+        min1 = min(res.values())
 
-        return mixV
+        resKey = []
+
+        for key,v in res.items():
+            if v == min1:
+                resKey.append(key)
+
+        if resKey != []: 
+            return resKey[0]
+        else:
+            return -1
 
 
 
 x = 3
 y = 4
-points = [[1,2],[3,1],[2,4],[2,3],[4,4]]
+points = [[2,3]]
 
 s1 = Solution()
 
