@@ -1,5 +1,3 @@
-from copy import deepcopy
-
 
 class Solution:
     def minSubArrayLen(self, target: int, nums) -> int:
@@ -7,43 +5,27 @@ class Solution:
         start = 0
         end = 0
 
-        res1 = []
-        res2 = []
+        sum = 0
+        res = float('inf')
 
-        while start <= end and end < :
 
-            if sum(res1) < target: 
-                res1.append(nums[end])
-                end += 1
+        while  end < len(nums):
 
-                # if end == len(nums)-1:
-                #     continue
-                # elif end < len(nums):
-                #     res1.append(nums[end])
-                #     end += 1
-                # print('小于:',res1)
-            # if sum(res1) > target:
-            #     res1.pop(0)
-            #     start += 1
-                # print('大于:',res1)
-            if sum(res1) >= target:
-                res2.append(deepcopy(res1))
-                res1.pop(0)
+            sum += nums[end]
+
+            while sum >= target:
+                res = min(res, end-start+1)
+                sum -= nums[start]
                 start += 1
 
-        return res2
+            end += 1
 
-        # if res2 == []: return 0
+        if res == float('inf') : return 0
 
-        # minLen = 106
-
-        # for i in res2:
-        #     minLen = min(minLen, len(i))
-
-        # return minLen
+        return res if res > 0 else 0
 
 target = 11
-nums = [1,2,3,4,5]
+nums = [1,1,1,1,1,1,1,1]
 
 s1 = Solution()
 res = s1.minSubArrayLen(target,nums)
