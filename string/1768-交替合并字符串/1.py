@@ -7,16 +7,17 @@ class Solution:
 
         a2 = 0
 
-        while a1 < len(word1) and a2 < len(word2):
-            if  a1 == len(word1) :
-                res = res + word2[a2]
-            if a2 == len(word2):
-                res = res + word1[a1]
-                
-            res = res + word1[a1] + word2[a2]
 
+        while a1 < min(len(word1),len(word2)) :
+            res = res + word1[a1] + word2[a1]
             a1 += 1
-            a2 += 1
+
+        s =  len(word1) > len(word2)
+
+        if s > 0:
+            res = res + word1[a1:]
+        else:
+            res = res + word2[a1:]
 
         return res
 
