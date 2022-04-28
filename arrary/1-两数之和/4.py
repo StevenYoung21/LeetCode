@@ -10,7 +10,6 @@ class Solution:
             else:
                 return[dis[target-val], index]
 
-
         return dis
 
 
