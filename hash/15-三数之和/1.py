@@ -1,11 +1,7 @@
-from dis import dis
-
 
 class Solution:
     def threeSum(self, nums) :
-
-        if nums == [] : return []
-
+        if nums == []: return []
         mapB = {}
 
         for i in range(len(nums)):
@@ -14,14 +10,16 @@ class Solution:
             else:
                 mapB[nums[i]] += 1
 
+        if 0 in mapB:
+            if mapB[0] == len(nums) and len(nums) >= 3: return [[0,0,0]]
+
+
         # return mapB
         mapA = mapB.copy()
 
         # res = []
         res = set()
         for i in range(len(nums)):
-            if mapA[nums[i]] >=3 and nums[i] == 0:
-                res.add((0,0,0))
             for j in range(i+1,len(nums)):
                 if nums[i] in mapA:
                     mapA[nums[i]] -= 1
@@ -36,8 +34,11 @@ class Solution:
                 else:
                     mapA[nums[j]] += 1   
                     mapA[nums[i]] += 1
-
             mapA = mapB.copy()
+
+            if 0 in mapA:
+                if mapA.get(0) >=3:
+                    res.add((0,0,0))
 
             res2 = []
 
@@ -55,7 +56,7 @@ class Solution:
         return s1
 
 
-nums = [-1,0,1,2,-1,-4]
+nums = [1]
 
 s1 = Solution()
 print(s1.threeSum(nums))
