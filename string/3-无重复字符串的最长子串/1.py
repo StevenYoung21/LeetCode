@@ -1,6 +1,3 @@
-from operator import length_hint
-from turtle import clear
-
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
@@ -21,7 +18,7 @@ class Solution:
                     cur.pop(0)
                 cur.append(s[i])
 
-        return maxLen
+        return maxlen
 
 
 s = "tmmzuxt"
