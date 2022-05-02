@@ -8,25 +8,18 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class TreeNode(object):
-    """节点类"""
-    def __init__(self, elem=-1, lchild=None, rchild=None):
-        self.elem = elem
-        self.lchild = lchild
-        self.rchild = rchild
-
 
 ## 构建二叉树
 class Tree(object):
     """树类"""
-    def __init__(self, elem=-1, lchild=None, rchild=None):
-        self.elem = elem
-        self.lchild = lchild
-        self.rchild = rchild
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-    def add(self, elem):
+    def add(self, val):
         """为树添加节点"""
-        node = TreeNode(elem)
+        node = TreeNode(val)
         #如果树是空的，则对根节点赋值
         if self.root == None:
             self.root = node
@@ -37,16 +30,16 @@ class Tree(object):
             while queue:
                 #弹出队列的第一个元素
                 cur = queue.pop(0)
-                if cur.lchild == None:
-                    cur.lchild = node
+                if cur.left == None:
+                    cur.left = node
                     return
-                elif cur.rchild == None:
-                    cur.rchild = node
+                elif cur.right == None:
+                    cur.right = node
                     return
                 else:
                     #如果左右子树都不为空，加入队列继续判断
-                    queue.append(cur.lchild)
-                    queue.append(cur.rchild)
+                    queue.append(cur.left)
+                    queue.append(cur.right)
 
 
 ## 打印二叉树
