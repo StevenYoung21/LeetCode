@@ -60,5 +60,5 @@ s1 = Solution()
 
 
 print(s1.preorderTraversal(t1))
-
+print(t1)
 # print_by_layer_2(t1)

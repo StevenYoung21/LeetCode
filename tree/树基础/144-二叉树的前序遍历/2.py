@@ -28,4 +28,22 @@ def pre_order(root):
         pre_order(root.lchild)
         pre_order(root.rchild)
 
-pre_order(root)
+# pre_order(root)
+
+class Solution:
+    def preorderTraversal(self, root) :
+
+        res = []
+        def DFS(node):
+            if node:
+                res.append(node.data)
+                DFS(node.lchild)
+                DFS(node.rchild)
+
+        DFS(root)
+            
+        return res
+
+s1 = Solution()
+
+print(s1.preorderTraversal(e))
