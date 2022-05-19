@@ -22,11 +22,11 @@ g.rchild = f
 root = e
 
 
-def pre_order(root):
-    if root:
-        print(root.data, end=',')
-        pre_order(root.lchild)
-        pre_order(root.rchild)
+# def pre_order(root):
+#     if root:
+#         print(root.data, end=',')
+#         pre_order(root.lchild)
+#         pre_order(root.rchild)
 
 # pre_order(root)
 
